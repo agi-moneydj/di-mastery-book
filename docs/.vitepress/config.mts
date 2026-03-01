@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
-export default defineConfig({
+export default withMermaid(defineConfig({
   title: 'Dependency Injection 精通指南',
   description: '基於《Dependency Injection Principles, Practices, and Patterns》的逐章精通指南',
   base: '/di-mastery-book/',
@@ -9,6 +10,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首頁', link: '/' },
+      { text: '全書精華', link: '/summary' },
       {
         text: '基礎篇',
         items: [
@@ -47,6 +49,12 @@ export default defineConfig({
     ],
 
     sidebar: [
+      {
+        text: '全書精華',
+        items: [
+          { text: '架構師視角的全書精華', link: '/summary' },
+        ]
+      },
       {
         text: 'Part 1：基礎篇 — DI 概念入門',
         items: [
@@ -103,5 +111,7 @@ export default defineConfig({
         }
       }
     }
-  }
-})
+  },
+
+  mermaid: {},
+}))
